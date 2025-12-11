@@ -1,0 +1,31 @@
+Table paint {
+    id int [pk, increment]
+    name string
+    price int
+}
+
+Table interior {
+    id int [pk, increment]
+    name string
+    price int
+}
+
+Table dashboard {
+    id int [pk, increment]
+    name string
+    price int
+}
+
+Table wheel {
+    id int [pk, increment]
+    name string
+    price int
+}
+
+Table order {
+    id int [pk, increment]
+    paintId int [ref: > paint.id]
+    interiorId int [ref: > interior.id]
+    dashboardId int [ref: > dashboard.id]
+    wheelId int [ref: > wheel.id]
+}
