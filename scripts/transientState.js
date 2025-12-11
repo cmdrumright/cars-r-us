@@ -22,7 +22,7 @@ export const placeOrder = async () => {
             body: JSON.stringify(transientState)
         }
 
-        response = await fetch("http://localhost:8088/orders", postOptions)
+        const response = await fetch("http://localhost:8088/orders", postOptions)
 
         const orderEvent = new CustomEvent("orderPlaced")
         document.dispatchEvent(orderEvent)

@@ -2,6 +2,8 @@ import { paintOptions } from "./paints.js"
 import { interiorOptions } from "./interiors.js"
 import { wheelOptions } from "./wheels.js"
 import { technologyOptions } from "./technologies.js"
+import { submitButton } from "./submitButton.js"
+import { orderList } from "./orderList.js"
 
 const render = async () => {
     const containerEl = document.querySelector("#container")
@@ -10,6 +12,8 @@ const render = async () => {
     const interiorsHTML = await interiorOptions()
     const wheelsHTML = await wheelOptions()
     const technologiesHTML = await technologyOptions()
+    const buttonHTML = submitButton()
+    const ordersHTML = await orderList()
 
     let mainHTML = `
         <header>
@@ -33,6 +37,10 @@ const render = async () => {
                     <h2>Technologies</h2>
                     ${technologiesHTML}
                 </div>
+            </section>
+            ${buttonHTML}
+            <section id="order-section">
+                ${ordersHTML}
             </section>
         </main>
     `
