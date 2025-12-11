@@ -39,5 +39,7 @@ const render = async () => {
 
     containerEl.innerHTML = mainHTML
 }
+
+document.addEventListener("orderPlaced", render)
             
 render()
