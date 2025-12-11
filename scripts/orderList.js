@@ -11,7 +11,7 @@ export const orderList = async () => {
 
         return `
             <div class="order-card">
-                Order #${order.id} price: ${localPrice}
+                ${order.paint.name} car with ${order.wheel.name} wheels, ${order.interior.name}, and the ${order.dashboard.name} for a total cost of ${localPrice}
             </div>
         `
     }).join("")
